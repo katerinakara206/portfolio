@@ -436,3 +436,41 @@ h2::after {
   .hero-3d { max-width: 180px; margin-top: 1rem; }
   .cube, .sphere { opacity: 0.6; }
 }
+
+/* Logo μεγαλύτερο */
+.navbar-brand .logo {
+  width: 90px;  /* πιο μεγάλο για desktop */
+  height: auto;
+}
+
+/* Navbar background & shadow on scroll */
+.navbar-custom {
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom.scrolled {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Burger toggle hover */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+/* Responsive adjustments για logo */
+@media (max-width: 992px) {
+  .navbar-brand .logo {
+    width: 60px;  /* λίγο μικρότερο σε tablet */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand .logo {
+    width: 70px;  /* μικρότερο σε κινητά αλλά εμφανές */
+  }
+}
