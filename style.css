@@ -471,6 +471,64 @@ h2::after {
 
 @media (max-width: 576px) {
   .navbar-brand .logo {
-    width: 70px;  /* μικρότερο σε κινητά αλλά εμφανές */
+    width: 80px;  /* μικρότερο σε κινητά αλλά εμφανές */
   }
+}
+
+
+/* Contact Card Hover */
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+/* Social Icons Hover */
+.social-icon:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+  color: #ff0000 !important;
+}
+
+
+/* Send Button Hover */
+.btn-send:hover {
+  background: linear-gradient(45deg, #ff0000, #ff4d4d);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+/* Floating Shapes Animation */
+.shape-small {
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+.contact-card .social-icon i {
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Χρώματα για κάθε social */
+.contact-card .social-icon.facebook i {
+  color: #1877F2;
+}
+
+.contact-card .social-icon.instagram i {
+  color: #E1306C;
+}
+
+.contact-card .social-icon.linkedin i {
+  color: #0A66C2;
+}
+
+/* Hover effect για όλα */
+.contact-card .social-icon:hover i {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
