@@ -1,0 +1,438 @@
+:root {
+  --primary: #E63946;   /* Κόκκινο – energy */
+  --secondary: #1D3557; /* Dark blue για ισορροπία */
+  --light: #f8f9fa;
+  --dark: #1a1a1a;
+  --gray: #6c757d;
+}
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* Navbar general */
+.navbar-custom {
+  background-color: rgba(255,255,255,0.95);
+  padding: 1rem 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-custom .nav-link {
+  color: #1D3557;
+  margin-left: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #E63946;
+  transform: translateY(-2px);
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Navbar shadow on scroll */
+.navbar-custom.scrolled {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Toggler Burger -> X */
+.navbar-toggler {
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  z-index: 1051;
+  outline: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #E63946;
+  border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #E63946;
+  border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+  top: -10px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+  bottom: -10px;
+}
+
+/* Active X state */
+.navbar-toggler.collapsed .navbar-toggler-icon {
+  background-color: #E63946;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Colors */
+.primary-color {
+  color: var(--primary);
+}
+
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    #fff 0%,
+    #fbeaec 100%
+  );
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-illustration {
+  max-width: 80%;
+}
+
+@media (max-width: 768px) {
+  .hero-illustration {
+    max-width: 60%;
+    margin-top: 20px;
+  }
+}
+
+h1 span,
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+ 
+
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(230,57,70,0.2);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background-color: #c92f3b;
+  border-color: #c92f3b;
+}
+
+/* Portfolio */
+.portfolio-item img {
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.portfolio-item {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.portfolio-item img {
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(90%);
+}
+
+
+/* Skill Cards */
+.skill-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(230,57,70,0.2);
+}
+
+/* Icon wrapper */
+.icon-wrapper {
+  font-size: 3rem;
+  color: #E63946; /* κόκκινο accent */
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.skill-card:hover .icon-wrapper {
+  transform: scale(1.2) rotate(10deg);
+  color: #f77f7f;
+}
+
+/* Responsive adjustment */
+@media(max-width:768px) {
+  .icon-wrapper { font-size: 2.5rem; }
+}
+
+
+/* Primary colors */
+.primary-color { color: #E63946; }
+
+/* Shared Shapes */
+.shape {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.6;
+  animation: floatShape 6s ease-in-out infinite alternate;
+}
+
+/* Hero 3D cubes */
+.hero-3d {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  perspective: 800px;
+}
+
+.cube {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg,#E63946,#F1A9A0);
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  animation: rotateCube 8s infinite linear;
+}
+.cube1 { top: 30px; left: 40px; transform: rotateX(20deg) rotateY(25deg); }
+.cube2 { top: 80px; left: 120px; transform: rotateX(-15deg) rotateY(30deg); }
+.cube3 { top: 140px; left: 60px; transform: rotateX(10deg) rotateY(-20deg); }
+
+/* Floating spheres */
+.sphere {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#457B9D,#A8DADC);
+  opacity: 0.8;
+  animation: floatSphere 6s ease-in-out infinite alternate;
+}
+.sphere1 { width:20px;height:20px; top:50px; left:150px; }
+.sphere2 { width:15px;height:15px; top:120px; left:30px; animation-delay:1s; }
+.sphere3 { width:25px;height:25px; top:180px; left:180px; animation-delay:2s; }
+
+/* Float animations */
+@keyframes floatShape { 0%{transform: translateY(0)}50%{transform: translateY(-15px)}100%{transform: translateY(0)} }
+@keyframes floatSphere { 0%{transform: translateY(0)}50%{transform: translateY(-10px)}100%{transform: translateY(0)} }
+@keyframes rotateCube { 0%{transform: rotateX(0deg) rotateY(0deg)}50%{transform: rotateX(15deg) rotateY(180deg)}100%{transform: rotateX(0deg) rotateY(360deg)} }
+
+/* Big Shapes About */
+.shape-circle { top: -40px; left: -40px; transform: rotate(-10deg); animation: floatShape 7s infinite alternate; }
+.shape-triangle { bottom: -30px; right: -30px; transform: rotate(25deg); animation: floatShape 6s infinite alternate-reverse; }
+.shape-blob { top: 40%; left: 75%; transform: translate(-50%, -50%) rotate(-15deg); animation: floatShape 8s infinite alternate; }
+
+/* Small Shapes About */
+.shape-small.s1 { top: 20%; left: 10%; animation-delay:0s; }
+.shape-small.s2 { top: 35%; left: 80%; animation-delay:1s; }
+.shape-small.s3 { top: 60%; left: 30%; animation-delay:2s; }
+.shape-small.s4 { top: 75%; left: 70%; animation-delay:3s; }
+.shape-small.s5 { top: 50%; left: 50%; animation-delay:4s; }
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-3d { width:180px; height:180px; }
+  .cube { width:50px;height:50px; }
+  .sphere { width:12px;height:12px; }
+  .shape-circle { width:100px;height:100px; top:-20px; left:-20px; }
+  .shape-triangle { width:80px;height:80px; bottom:-15px; right:-15px; transform:rotate(15deg);}
+  .shape-blob { width:120px;height:120px; left:80%; top:45%; }
+  .shape-small.s1{width:30px;height:30px;top:15%;left:5%;}
+  .shape-small.s2{width:25px;height:25px;top:30%;left:75%;}
+  .shape-small.s3{width:35px;height:35px;top:55%;left:25%;}
+  .sh
+}
+
+/* Contact Section */
+#contact .form-control {
+  border-radius: 0.75rem;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact .form-control:focus {
+  border-color: #E63946;
+  box-shadow: 0 0 10px rgba(230,57,70,0.2);
+  outline: none;
+}
+
+#contact .btn-primary {
+  background-color: #E63946;
+  border-color: #E63946;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact .btn-primary:hover {
+  background-color: #F77F7F;
+  transform: translateY(-3px);
+}
+
+/* Floating shapes reuse from Hero/About */
+#contact .shape {
+  position: absolute;
+  z-index:1;
+  opacity:0.6;
+  animation: floatShape 6s ease-in-out infinite alternate;
+}
+
+#contact .shape-circle { top:-30px; right:-30px; }
+#contact .shape-triangle { bottom:-20px; left:-20px; transform:rotate(20deg);}
+#contact .shape-small.s1 { top:20%; left:10%; animation-delay:0s; }
+#contact .shape-small.s2 { top:60%; left:70%; animation-delay:1s; }
+
+/* Responsive */
+@media(max-width:768px){
+  #contact .shape-circle { width:70px;height:70px; top:-15px; right:-15px; }
+  #contact .shape-triangle { width:60px;height:60px; bottom:-10px; left:-10px; }
+  #contact .shape-small.s1{ width:20px;height:20px; top:15%; left:5%; }
+  #contact .shape-small.s2{ width:15px;height:15px; top:55%; left:65%; }
+}
+
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  color: #1D1D1D;
+  overflow: hidden;
+}
+
+/* Text */
+.hero-section h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-section h1 .primary-color {
+  color: #E63946;
+}
+
+.hero-section p.lead {
+  font-size: 1.25rem;
+  color: rgba(29,29,29,0.8);
+}
+
+/* Button */
+.hero-section .btn-primary {
+  background: #E63946;
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+  background: #F1A9A0;
+  color: #1D1D1D;
+  transform: translateY(-3px);
+}
+
+/* 3D shapes */
+.hero-3d {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin: 2rem auto 0;
+}
+
+.cube, .sphere {
+  position: absolute;
+  border-radius: 0.25rem;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cube1 { width: 60px; height: 60px; background: #E63946; top: 10%; left: 10%; animation-delay: 0s; }
+.cube2 { width: 50px; height: 50px; background: #F1A9A0; top: 40%; left: 30%; animation-delay: 1s; }
+.cube3 { width: 40px; height: 40px; background: #E63946; top: 70%; left: 60%; animation-delay: 2s; }
+
+.sphere1 { width: 35px; height: 35px; background: #E63946; border-radius: 50%; top: 20%; left: 70%; animation-delay: 0.5s; }
+.sphere2 { width: 25px; height: 25px; background: #F1A9A0; border-radius: 50%; top: 50%; left: 50%; animation-delay: 1.5s; }
+.sphere3 { width: 20px; height: 20px; background: #E63946; border-radius: 50%; top: 80%; left: 20%; animation-delay: 2.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(20deg); }
+}
+
+/* Responsive text scaling */
+@media (max-width: 992px) {
+  .hero-section h1 { font-size: 2.5rem; }
+  .hero-section p.lead { font-size: 1.1rem; }
+  .hero-3d { max-width: 250px; }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 { font-size: 2rem; }
+  .hero-section p.lead { font-size: 0.95rem; }
+  .hero-3d { max-width: 180px; margin-top: 1rem; }
+  .cube, .sphere { opacity: 0.6; }
+}
