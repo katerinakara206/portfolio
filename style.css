@@ -546,3 +546,51 @@ h2::after {
   transform: translateY(-3px);
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #E63946;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.35s ease;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.35);
+}
+
+/* Visible state */
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover effect – subtle & premium */
+#backToTop:hover {
+  background: #fff;
+  color: #E63946;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(230, 57, 70, 0.45);
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  #backToTop {
+    width: 46px;
+    height: 46px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

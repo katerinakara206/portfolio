@@ -43,3 +43,5 @@ document.addEventListener("DOMContentLoaded", function() {
     toggler.classList.toggle('collapsed');
   });
 });
+
+

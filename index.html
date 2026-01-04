@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Graphic Designer Portfolio</title>
+  <title>KK</title>
 
   <!-- Bootstrap CSS -->
 
@@ -414,6 +414,12 @@
   </svg>
 </section>
 
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24">
+    <path d="M12 5l-7 7h4v7h6v-7h4z" fill="currentColor"/>
+  </svg>
+</button>
 
      
 
@@ -437,6 +443,26 @@
     toggler.classList.toggle('collapsed');
   });
 </script>
+
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("show");
+    } else {
+      backToTop.classList.remove("show");
+    }
+  });
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 
 
 </body>
