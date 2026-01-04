@@ -136,6 +136,40 @@ section {
   }
 }
 
+/* Mobile menu centered */
+@media (max-width: 992px) {
+
+  /* Center the whole menu */
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0.75rem 0;
+    display: inline-block; /* για σωστό underline */
+  }
+
+  /* Underline centered κάτω από το κείμενο */
+  .navbar-nav .nav-link::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .navbar-nav .nav-link.active::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 
 
 /* Colors */
